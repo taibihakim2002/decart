@@ -1,0 +1,49 @@
+.grid-300 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.grid-250 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width:992px) {
+    .grid-250 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+
+
+/* button style */
+.btn {
+    background-color: rgb(0, 123, 255);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+.bg-red {
+    background-color: red;
+}
+.bg-green {
+    background-color: green;
+}
+.bg-orange {
+    background-color: orange;
+}
+.bg-white {
+    background-color: white;
+}
+.c-green {
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,650 @@
+:root {
+  --bgColor: #f1f5f9;
+  --eee: #eeeeee;
+  --ccc: #ccc;
+  --size: 12px;
+  --mainColor: #fec629;
+}
+body {
+  font-family: "Cairo", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+input[type="submit"] {
+  cursor: pointer;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+.page {
+  min-height: 100vh;
+  display: flex;
+}
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+/* Start Sidebar  */
+.sidebar {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0px 0px 10px #b0b0b0;
+  max-width: 220px;
+  min-width: 220px;
+}
+
+.sidebar h3 {
+  text-align: center;
+}
+
+.header .show-side {
+  margin-left: 20px;
+  font-size: 22px;
+  color: var(--mainColor);
+  animation-name: arrow;
+  animation-duration: 0.1s;
+  animation: arrow 0.6s 0s infinite;
+  cursor: pointer;
+  z-index: 90;
+  display: none;
+}
+
+@keyframes arrow {
+  0% {
+  }
+  100% {
+    transform: translateX(-7px);
+  }
+}
+.sidebar > ul {
+  margin-top: 50px;
+}
+.sidebar .sumlist-side li {
+  padding-bottom: 0;
+}
+
+.sidebar li {
+  padding: 15px 5px;
+  border-radius: 10px;
+}
+
+.sidebar li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+}
+
+.sidebar li a span {
+  margin-right: 10px;
+}
+.close-side {
+  display: none;
+  position: fixed;
+  left: 20px;
+  top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media (max-width: 667px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .over-bg {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.7;
+    display: none;
+  }
+  .header .show-side {
+    display: block;
+  }
+}
+
+.sidebar .active {
+  background-color: #f1f1f1;
+}
+.sidebar .submenu li {
+  margin-right: 27px;
+}
+.sidebar .submenu li {
+  margin-right: 27px;
+}
+.sidebar .submenu li {
+  margin-right: 27px;
+}
+
+/* End Sidebar  */
+/* Start Content  */
+.content {
+  background-color: var(--bgColor);
+  width: 100%;
+}
+/* Start Header */
+.content .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.content .header .left {
+  display: flex;
+  align-items: center;
+}
+.content .header .left .search-box {
+  border: 1px solid var(--ccc);
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+.content .header .left .search-box:hover {
+  width: 200px;
+}
+.content .header .left input {
+  width: 100%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.content .header .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content .header .right img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.content .header .right .fa-bell {
+  position: relative;
+  font-size: 20px;
+}
+.content .header .right .notiv {
+  position: relative;
+}
+.content .header .right .notiv::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+/* End Header */
+/* End Content  */
+/* Start Main */
+.main {
+  padding: 15px 30px;
+  margin-top: 50px;
+}
+.main h2 {
+  position: relative;
+  width: fit-content;
+}
+.main h2::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  background-color: #000;
+  bottom: -10px;
+  right: 0;
+}
+.main h2::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background-color: #fff;
+  bottom: -10px;
+  left: 0;
+}
+/* Start info */
+.main .info {
+  margin-top: 40px;
+}
+.main .info .box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px 20px;
+  box-shadow: 0 0 10px #e2e2e2;
+  cursor: pointer;
+}
+.main .info .box:hover {
+  background-color: var(--mainColor);
+  color: white;
+}
+.main .info .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .info .icon {
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+}
+.main .info .box:nth-child(1) .icon {
+  background-color: #0bdb5e;
+}
+.main .info .box:nth-child(2) .icon {
+  background-color: #808409;
+}
+.main .info .box:nth-child(3) .icon {
+  background-color: #0b62db;
+}
+.main .info .box:nth-child(4) .icon {
+  background-color: #db760b;
+}
+.main .info .box .left-box p {
+  color: #333;
+}
+.main .info .box .left-box h3 {
+  font-size: 25px;
+}
+/* End info */
+/* Start cards */
+.main .cards {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .main .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.main .cards .students {
+}
+.main .top-card {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.students .table-container {
+  display: table;
+  width: 100%;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .students .table-container {
+    font-size: 11px;
+  }
+}
+.students .table-row {
+  display: table-row;
+  background-color: white;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+}
+.students .table-row:hover {
+  background-color: #fec629;
+  color: white;
+}
+.students .table-row::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--bgColor);
+  bottom: -2px;
+  left: 0px;
+}
+.students .table-cell {
+  display: table-cell;
+  padding: 8px;
+}
+@media (max-width: 767px) {
+  .students .table-container .table-cell img {
+    display: none;
+  }
+}
+
+.students .header-row {
+  display: table-row;
+  color: #7b7b7b;
+  font-weight: bold;
+  font-size: 13px;
+}
+.cards .action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards .action .remove {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.cources .cources-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.cources .cources-container .course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.cources .cources-container .course:hover {
+  background-color: var(--mainColor);
+  color: white;
+}
+.cources .cources-container .course .course-info h4 {
+  font-size: 12px;
+}
+.cources .cources-container .course .course-info p {
+  font-size: 11px;
+}
+.cources .cources-container .course .state {
+  width: fit-content;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.logout {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+/* End cards */
+/* Start Settings */
+.settings-container .setting {
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 13px;
+}
+.settings-container .setting input:not(:last-child),
+.settings-container .setting .password input {
+  width: 100%;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  padding: 5px 5px;
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.settings-container .setting input:focus {
+  border-color: #db760b;
+}
+
+.save-btn {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.pass-change {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-container .sm {
+  background-color: #eee;
+  border: 1px solid #cbcbcb;
+  margin-top: 15px;
+
+  border-radius: 5px;
+}
+.settings-container .sm .iconsm {
+  padding: 0 10px;
+  position: relative;
+  border-left: 1px solid #cbcbcb;
+}
+.settings-container .sm input {
+  background-color: inherit;
+  font-size: 11px;
+  padding: 8px;
+  width: calc(100% - 40px);
+}
+.settings-container .setting .image-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.settings-container .setting .image-profile img {
+  width: 70px;
+  height: 70px;
+}
+
+/* End Settings */
+
+/* End Main */
+
+.student-icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Start Students  */
+.students .see-more {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* End Students  */
+
+/* Start cources */
+.courses,
+.teachers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.courses .course,
+.teachers .teacher {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+.courses .course:hover,
+.teachers .teacher:hover {
+  background-color: #eee;
+  transform: translateY(-10px);
+}
+
+.courses .course .image,
+.teachers .teacher .image {
+  display: flex;
+  justify-content: center;
+}
+.courses .course .image img,
+.teachers .teacher .image img {
+  width: 100px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.courses .course h5 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.courses .course .teacher-name,
+.teachers .teacher .teacher-name {
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.teachers .teacher .teacher-name {
+  font-weight: bold;
+}
+.courses .course p,
+.teachers .teacher p {
+  font-size: 13px;
+}
+.courses .course .date {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.courses .course .more-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.courses .course .place {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.courses .course .price {
+  padding: 0px 10px;
+  background-color: var(--mainColor);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.courses .course .buttons,
+.teachers .teacher .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin-top: 20px;
+}
+.teachers .teacher .subject {
+  font-weight: bold;
+}
+
+/* End cources */
+
+/* Start Add teacher  */
+
+.add-teacher {
+  font-size: 13px;
+  background-color: white;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.add-teacher .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.add-teacher .photo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: column;
+  position: relative;
+}
+.add-teacher .photo .custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  bottom: 0;
+  font-size: 16px;
+}
+.add-teacher .photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.add-teacher .save-teacher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-teacher .save-teacher-btn {
+  width: 150px;
+}
+.add-teacher input:not(input[type="submit"]) {
+  border: 1px solid #bcbcbc;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.add-teacher select {
+  width: 100%;
+}
+
+#photo {
+  display: none;
+}
+
+/* End Add teacher  */
